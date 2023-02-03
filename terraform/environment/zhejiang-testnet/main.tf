@@ -113,7 +113,6 @@ variable "digitalocean_vm_groups" {
       id = "prysm-erigon"
       vms = {
         "1" = {}
-        "2" = {}
       }
     },
     {

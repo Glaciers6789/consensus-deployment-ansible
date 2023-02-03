@@ -53,7 +53,7 @@ beacon_start_args: >
         --rest.namespace *
         --enr.udp {{ beacon_p2p_port }}
         --metrics.port={{ beacon_metrics_port }}
-        --eth1.depositContractDeployBlock=14675001
+        --eth1.depositContractDeployBlock=0
         --jwt-secret="/jwtsecret"
         --suggestedFeeRecipient={{fee_recipient}}
         {% if mev_boost == 'true' %}

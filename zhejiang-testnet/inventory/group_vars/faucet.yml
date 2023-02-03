@@ -16,9 +16,9 @@ hcaptcha_secret: "{{ lookup('pipe', 'keybase fs read /keybase/team/ethereum.devo
 ##############################################
 # Pubkey for faucet: 0xe6d4d2f9e68eDc73A33EB97abCA432f304c2C438
 ether_to_transfer: 33000000000000000000
-faucet_rpc_url: https://rpc.zhejiang.ethpandaops.com
+faucet_rpc_url: http://zhejiang-testnet-prysm-geth-bootnode.ethpandaops.io:8545
 faucet_private_key: "{{ lookup('pipe', 'keybase fs read /keybase/team/ethereum.devops/withdrawals/withdrawal-faucet.key') }}"
-unit_name: "wheeETH"
+unit_name: "zETH"
 
 ##############################################
 # faucet container info

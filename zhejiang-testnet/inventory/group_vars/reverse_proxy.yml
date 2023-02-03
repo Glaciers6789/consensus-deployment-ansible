@@ -7,6 +7,8 @@ certificates:
     mode: http
   "faucet.{{ cl_network_name }}.{{ domain }}":
     mode: http
+  "beacon.{{ cl_network_name }}.{{ domain }}":
+    mode: http
   # "explorer.{{ cl_network_name }}.{{ domain }}":
   #   mode: http
   # "ethstats.{{ cl_network_name }}.{{ domain }}":
@@ -36,6 +38,9 @@ haproxy_frontends:
   - name: host_withdrawal_devnet_forkmon
     address: "forkmon.{{ cl_network_name }}.{{ domain }}"
     backend: host_withdrawal_devnet_forkmon
+  - name: host_withdrawal_devnet_beacon
+    address: "beacon.{{ cl_network_name }}.{{ domain }}"
+    backend: host_withdrawal_devnet_beacon
 
 haproxy_backend_servers:
   - name: host_withdrawal_devnet_rpc
@@ -58,6 +63,9 @@ haproxy_backend_servers:
     options: 'check fall 3 rise 2'
   - name: host_withdrawal_devnet_forkmon
     address: 127.0.0.1:8181
+    options: 'check fall 3 rise 2'
+  - name: host_withdrawal_devnet_beacon
+    address: 127.0.0.1:4000
     options: 'check fall 3 rise 2'
 
 haproxy_stats_port: 8404

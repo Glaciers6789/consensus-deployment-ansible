@@ -21,7 +21,7 @@ params:
     faucetUrl: https://faucet.{{ cl_network_name }}.{{ domain }}
     forkmonUrl: https://forkmon.{{ cl_network_name }}.{{ domain }}
     rpcUrl: https://rpc.{{ cl_network_name }}.{{ domain }}
-    explorerUrl: https://zhejiang.beaconcha.in
+    explorerUrl: https://blockscout.com/eth/zhejiang-testnet
     chainName: "{{cl_network_name}}"
     chainId: "{{chainID}}"
   metamask:
@@ -34,7 +34,7 @@ params:
     dataLookup: explorerUrl
 #  - name: "Ethstats"
 #    dataLookup: ethstatsUrl
-  - name: "Faucet (available post genesis)"
+  - name: "Faucet"
     dataLookup: faucetUrl
   - name: "Forkmon"
     dataLookup: forkmonUrl
@@ -42,8 +42,14 @@ params:
     dataLookup: rpcUrl
 
   additionalLinks:
-   - name: "Launchpad (available post genesis)"
+   - name: "Launchpad"
      url: "https://{{ cl_network_name }}.launchpad.ethereum.org"
+   - name: "Beacon API endpoint"
+     url: "https://beacon.{{cl_network_name}}.{{domain}}"
+   - name: "Alternative Faucet by pk910"
+     url: "https://zhejiang-faucet.pk910.de/"
+   - name: "Alternative Faucet by ethstaker (look for #request-zhejiang-eth channel)"
+     url: "https://discord.io/ethstaker"
 
 menu:
   main:

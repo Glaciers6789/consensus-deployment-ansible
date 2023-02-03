@@ -36,9 +36,11 @@ beacon_start_args: >
   --max-peers="{{hi_peer_count}}"
   --data-dir="/beacondata"
   --web3-url={{execution_endpoint}}
-  {% if (bootnode_enrs is defined) and bootnode_enrs %}
-  --bootstrap-node="{{ bootnode_enrs | join(',') }}"
-  {% endif %}
+   {% if (bootnode_enrs is defined) and bootnode_enrs %}
+    {% for bootnode_enrs in bootnode_enrs %}
+    --bootstrap-node="{{ bootnode_enrs }}"
+    {% endfor %}
+    {% endif %}
   --udp-port={{beacon_p2p_port}}
   --tcp-port={{beacon_p2p_port}}
   --listen-address=0.0.0.0

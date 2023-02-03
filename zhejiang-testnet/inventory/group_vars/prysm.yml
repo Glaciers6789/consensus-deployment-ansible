@@ -64,7 +64,7 @@ beacon_start_args: >
   --jwt-secret=/jwtsecret
   --disable-staking-contract-check
   --suggested-fee-recipient={{ fee_recipient }}
-  --contract-deployment-block=14675001
+  --contract-deployment-block=0
   {% if mev_boost == 'true' %}
   --http-mev-relay="http://127.0.0.1:{{mev_boost_port}}"
   {% endif %}
